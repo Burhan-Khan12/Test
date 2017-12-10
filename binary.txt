@@ -1,0 +1,46 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class test {
+
+	
+	public static void returnBinary(int number) {
+		
+		int binary_Arr[] = new int [40];
+		int count = 0;
+		
+		while(number>0)
+		{
+			binary_Arr[count] = number%2;
+			number/=2;
+			count++;
+		}
+		
+		for(int i=count-1;i>=0;i--)
+			System.out.print(binary_Arr[i]);
+	
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please Enter the number:- ");
+		int number = in.nextInt();
+		
+		if(number < 0)
+			System.out.println("Please enter the positive integer");
+		else
+		{
+			if(number<=1)
+				System.out.println(number);
+			else
+				returnBinary(number);
+		}
+		
+	}
+
+}
